@@ -27,7 +27,7 @@ def create_cart(id:int,cart: cart_schemas.Cart,db :Session = Depends(get_db)):
 def get_all_cart(db: Session = Depends(get_db)):
     get_all=db.query(cart_models.CartModel).all()
     if not get_all:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,detail=f"not have data to get")
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,detail=f"not have data to get!")
     return get_all
 
 
