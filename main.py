@@ -1,4 +1,4 @@
-from fastapi import Depends, FastAPI,HTTPException,status,Response,Request
+from fastapi import FastAPI
 from routers_API.main_API import user_main,login_main,product_main,cart_main
 from routers_API.models import user_models
 from routers_API.database import engine
