@@ -14,8 +14,7 @@ def create_cart(cart: cart_schemas.Cart,db :Session = Depends(get_db)):
     db.commit()
     db.refresh(db_cart)
     userr =db.query(product_models.ProductModel).filter(product_models.ProductModel.price == 1000).first()
-    te = db.query(cart_models.CartModel).all()
-    user_cart =db.query(cart_models.CartModel).filter(cart_models.CartModel.id == len(te)).first()
+    user_cart =db.query(cart_models.CartModel).filter(cart_models.CartModel.id == 1).first()
     id_cart = user_cart.cart_id
     sub_price = userr.price * cart.quantity
     vat = sub_price *0.1
