@@ -1,14 +1,14 @@
 from fastapi import APIRouter
 from ..models import product_models
 from ..database import get_db
-from ..schemas import product_schemas,login
+from ..from_input import product_schemas,login
 from typing import List
 from sqlalchemy.orm import Session
 from fastapi import Depends, FastAPI,HTTPException,status,Response,Cookie
-from ..crud_API import product_crud
+from ..controllers import product_crud
 from  fastapi.responses import ORJSONResponse
 
-from .. import header
+from ..controllers import header
 router = APIRouter(
     tags=['Product'],
     prefix="/product"

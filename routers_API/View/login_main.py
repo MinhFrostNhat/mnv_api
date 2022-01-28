@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from .. import jwttoken
+from ..controllers import jwttoken
 
 from fastapi.security import OAuth2PasswordRequestForm
 from ..database import get_db

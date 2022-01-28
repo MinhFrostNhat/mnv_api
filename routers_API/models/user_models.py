@@ -10,4 +10,5 @@ class userinfo(Base):
     username = Column(String(225), unique=True)
     password = Column(String(255))
 
+
     

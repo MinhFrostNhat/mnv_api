@@ -1,14 +1,14 @@
 from fastapi import APIRouter
 from ..models import user_models
 from ..database import get_db
-from ..schemas import user_schemas,login
+from ..from_input import user_schemas,login
 from typing import List
 from sqlalchemy.orm import Session
 from fastapi import Depends, FastAPI,HTTPException,status,Response,Cookie
-from ..crud_API import user_crud
+from ..controllers import user_crud
 from  fastapi.responses import ORJSONResponse
 
-from .. import header
+from ..controllers import header
 router = APIRouter(
     tags=['User'],
     prefix="/user"

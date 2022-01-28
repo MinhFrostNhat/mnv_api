@@ -1,4 +1,4 @@
-from re import I
+
 from sqlalchemy import Column, DateTime, Integer, String,Float,VARCHAR
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql.schema import ForeignKey

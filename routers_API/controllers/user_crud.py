@@ -2,7 +2,7 @@ from fastapi import APIRouter
 
 from ..models import user_models
 from ..database import get_db
-from ..schemas import user_schemas
+from ..from_input import user_schemas
 from typing import List
 from sqlalchemy.orm import Session
 from fastapi import Depends, FastAPI,HTTPException,status,Response
