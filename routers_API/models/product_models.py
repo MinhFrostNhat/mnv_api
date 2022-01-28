@@ -11,7 +11,7 @@ from fastapi_utils.guid_type import GUID,GUID_DEFAULT_SQLITE
 class ProductModel(Base):
     __tablename__ = "product"
 
-    id = Column(Integer, primary_key=True,)
+    id = Column(Integer, primary_key=True, index=True)
     prouuid = Column(GUID,default=GUID_DEFAULT_SQLITE)
     name = Column(String(255))
     price = Column(Float)

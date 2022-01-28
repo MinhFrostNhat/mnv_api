@@ -15,9 +15,9 @@ router = APIRouter(
 )
 
 @router.post("/createCartItem",status_code=status.HTTP_201_CREATED)
-def create_cart(id:int, request : cart_schemas.Cart, db :Session = Depends(get_db),get_current_user : login.UserCreate = Depends(
+def create_cart(request : cart_schemas.Cart, db :Session = Depends(get_db),get_current_user : login.UserCreate = Depends(
     header.get_current_user)):
-    return cart_crud.create_cart(id,request,db,)
+    return cart_crud.create_cart(request,db,)
 
 
 @router.get("/getallCartItem",status_code=status.HTTP_200_OK,response_model=List[cart_schemas.Cart])
@@ -27,7 +27,7 @@ def getall_all( db: Session = Depends(get_db),get_current_user : login.UserCreat
 
 
 @router.put("/cartItem",status_code=status.HTTP_200_OK)
-def update_cart(id:int, response: Response, request: cart_schemas.Cart, db:Session =Depends(get_db),get_current_user : login.UserCreate = Depends(
+def update_cart(id, request: cart_schemas.Cart, db:Session =Depends(get_db),get_current_user : login.UserCreate = Depends(
     header.get_current_user)):
     return cart_crud.update_cart_crud(id,request,db)
 

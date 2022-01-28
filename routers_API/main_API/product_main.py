@@ -15,7 +15,7 @@ router = APIRouter(
 )
 
 @router.post("/create",status_code=status.HTTP_201_CREATED)
-def create_question(id:str, request : product_schemas.product, db :Session = Depends(get_db),get_current_user : login.UserCreate = Depends(
+def create_question(request : product_schemas.product, db :Session = Depends(get_db),get_current_user : login.UserCreate = Depends(
     header.get_current_user)):
     return product_crud.create_product_crud(request,db)
 

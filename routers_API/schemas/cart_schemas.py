@@ -16,7 +16,7 @@ class Cart(BaseModel):
 
 
 class Show(BaseModel):
-    quantity : int
+    cart_id: str
    
 
 
